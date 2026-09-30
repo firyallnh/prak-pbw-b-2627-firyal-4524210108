@@ -6,7 +6,7 @@ PEMROGRAMAN BERBASIS WEB
 </h1>
 
 <p font-size: 12px; color: #555;">
-<i>"Laporan ini disusun guna memenuhi penilaian dalam mata kuliah Prak. Pemrograman Berbasis Web"</i>
+<i>Laporan ini disusun guna memenuhi penilaian dalam mata kuliah Prak. Pemrograman Berbasis Web</i>
 </p>
 
 <br>
