@@ -24,9 +24,7 @@ $result = mysqli_query($koneksi, $sqlSelect);
 
 echo "--- HASIL QUERY SELECT ---\n";
 
-// Cek apakah ada data yang memenuhi kriteria (IPK >= 3.50)
 if (mysqli_num_rows($result) > 0) {
-    // Menampilkan data mahasiswa yang memenuhi kriteria
     while ($row = mysqli_fetch_assoc($result)) {
         echo "NIM   : " . $row['nim'] . "\n";
         echo "Nama  : " . $row['nama'] . "\n";
@@ -36,6 +34,41 @@ if (mysqli_num_rows($result) > 0) {
 } else {
     echo "Tidak ada data mahasiswa dengan kriteria tersebut.\n";
 }
+
+
+// Modifikasi 1: menampilkan mahasiswa dari Teknik Informatika
+
+$sqlProdi = "SELECT nim, nama, ipk
+             FROM mahasiswa
+             WHERE prodi = 'Teknik Informatika'";
+
+$resultProdi = mysqli_query($koneksi, $sqlProdi);
+
+echo "\n--- MAHASISWA TEKNIK INFORMATIKA ---\n";
+
+while ($row = mysqli_fetch_assoc($resultProdi)) {
+    echo "NIM  : " . $row['nim'] . "\n";
+    echo "Nama : " . $row['nama'] . "\n";
+    echo "IPK  : " . $row['ipk'] . "\n";
+}
+
+// MODIFIKASI 2: menampilkan mahasiswa dengan IPK tertinggi
+
+$sqlMax = "SELECT nim, nama, ipk
+           FROM mahasiswa
+           ORDER BY ipk DESC
+           LIMIT 1";
+
+$resultMax = mysqli_query($koneksi, $sqlMax);
+
+echo "\n--- MAHASISWA DENGAN IPK TERTINGGI ---\n";
+
+$row = mysqli_fetch_assoc($resultMax);
+
+echo "NIM  : " . $row['nim'] . "\n";
+echo "Nama : " . $row['nama'] . "\n";
+echo "IPK  : " . $row['ipk'] . "\n";
+
 
 mysqli_close($koneksi);
 ?>

@@ -77,5 +77,35 @@ if (mysqli_num_rows($resultVerifikasi) > 0) {
     echo "Data mahasiswa dengan NIM 2025003 TIDAK DITEMUKAN.\n";
 }
 
+
+// Modifikasi 1 = menampilkan mahasiswa dengan IPK di atas 3.50
+
+$sqlIPK = "SELECT nim, nama, ipk
+           FROM mahasiswa
+           WHERE ipk > 3.50";
+
+$resultIPK = mysqli_query($koneksi, $sqlIPK);
+
+echo "\n=== MAHASISWA DENGAN IPK DI ATAS 3.50 ===\n";
+
+while ($row = mysqli_fetch_assoc($resultIPK)) {
+    echo "NIM  : " . $row['nim'] . "\n";
+    echo "Nama : " . $row['nama'] . "\n";
+    echo "IPK  : " . $row['ipk'] . "\n";
+}
+
+
+// Modifikasi 2 = menghitung jumlah mahasiswa
+
+$sqlJumlah = "SELECT COUNT(*) AS jumlah FROM mahasiswa";
+
+$resultJumlah = mysqli_query($koneksi, $sqlJumlah);
+
+$rowJumlah = mysqli_fetch_assoc($resultJumlah);
+
+echo "\n=== JUMLAH MAHASISWA ===\n";
+echo "Jumlah mahasiswa: " . $rowJumlah['jumlah'] . "\n";
+
+
 mysqli_close($koneksi);
 ?>

@@ -1,6 +1,8 @@
 <?php
 require_once 'koneksi.php';
+
 $sqlCreateDB = "CREATE DATABASE IF NOT EXISTS akademik";
+
 if(mysqli_query($koneksi, $sqlCreateDB)){
     echo "Database berhasil dibuat atau sudah ada.\n";
 } else {
