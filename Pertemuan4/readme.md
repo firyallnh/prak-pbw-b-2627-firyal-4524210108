@@ -50,8 +50,6 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
 
 Pada tugas ini dilakukan penerapan program pada Pertemuan 4. Program yang digunakan yaitu `koneksi.php`, `contoh1.php`, `contoh2.php`, `tugas4-1.php`, dan `tugas4-2.php`. Program digunakan untuk melakukan proses pengolahan data mahasiswa menggunakan PHP dan MySQL.
 
-## 1. Menjalankan Program
-
 ### A. koneksi.php
 
 #### Hasil Running
